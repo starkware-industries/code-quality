@@ -8,24 +8,24 @@
     right: 50pt,
   )
 )
-#set text(size: 11pt)
+#set text(size: 14pt)
 
 #logo
 
 #block_header(0, [Git Like a Surgeon])
 
 #what
-Git isn't just for saving work - it's a time machine for code!\
+\ Git isn't just for saving work - it's a time machine for code!\
 Every commit is a snapshot of your thinking.\
 Every branch is a playground for your ideas.\
 Every PR carries your work toward a shared creation.
 
 #why
-Master Git. Develop fearlessly.
+\ Master Git. Develop fearlessly.
 
 #how
 - *  Commit Surgery:* \
-Just committed a change, but realized it should be two separate commits❓
+\ Just committed a change, but realized it should be two separate commits❓
 
 #code[```bash
 # Store the current commit hash in a variable.
