@@ -28,13 +28,10 @@
         inset: 12pt,
         fill: rgb(192, 243, 250),
         radius: 8pt,
+        stroke: black,
         width: auto,
     )[
-        #text(
-            fill: black,
-            font: "Comic Neue",
-            weight: "bold",
-        )[ TIP💡 ]
+        #image("tip.png", width: 40pt)
         #text(
             fill: black,
             font: "Comic Neue",
@@ -45,22 +42,32 @@
 #let call_for_action(x) = {
     box(
         inset: 5pt,
-        fill: red,
+        fill: rgb(195, 177, 225),
         radius: 8pt,
         width: auto,
     )[
-        #text(
-            fill: white,
-            font: "Comic Neue",
-            weight: "bold",
-        )[*📢💨 Call to Action!*]
+        #image("action.png", width: 100pt)
         #text(
             fill: white,
             font: "Comic Neue",
         )[#x]
-    ]
+    ]      
 }
 
-#let what = {image("what.png", width:80pt)}
-#let why = {image("why.png", width:80pt)}
-#let how = {image("how.png", width:80pt)}
+#let bordered_box(path)= {
+    box(
+  stroke: black,
+  inset: 1pt,
+  fill: black,
+  radius: 0pt,
+  [
+    #image(path, width: 80pt)
+  ]
+)
+}
+
+#let what = {bordered_box("what.png")}
+#let why = {bordered_box("why.png")}
+#let how = {bordered_box("how.png")}
+
+
