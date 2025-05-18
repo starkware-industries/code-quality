@@ -1,4 +1,4 @@
-#import "block_by_block.typ": *
+#import "../src/block_by_block.typ": *
 
 #set page(
   margin: (

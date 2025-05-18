@@ -1,6 +1,6 @@
 #let logo = {
     align(right)[
-        #image("block_by_block.svg", width:180pt)
+        #image("images/block_by_block.svg", width:180pt)
     ]
 
     v(-15pt)
@@ -31,26 +31,27 @@
         stroke: black,
         width: auto,
     )[
-        #image("tip.png", width: 40pt)
         #text(
             fill: black,
             font: "Comic Neue",
-        )[#x]
+        )[*TIP💡* #x]
     ]
 }
 
+
+
 #let call_for_action(x) = {
     box(
-        inset: 5pt,
+        inset: 12pt,
         fill: rgb(195, 177, 225),
         radius: 8pt,
+        stroke: black,
         width: auto,
     )[
-        #image("action.png", width: 100pt)
         #text(
-            fill: white,
+            fill: black,
             font: "Comic Neue",
-        )[#x]
+        )[*Call For Action!*📢💨 #x]
     ]      
 }
 
@@ -66,8 +67,8 @@
 )
 }
 
-#let what = {bordered_box("what.png")}
-#let why = {bordered_box("why.png")}
-#let how = {bordered_box("how.png")}
+#let what = {bordered_box("images/what.png")}
+#let why = {bordered_box("images/why.png")}
+#let how = {bordered_box("images/how.png")}
 
 
