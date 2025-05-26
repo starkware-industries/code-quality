@@ -24,9 +24,8 @@ thing for tests?
 
 #code[```rust
 #[test]
-fn verify_all_users_exist() {
+fn verify_positive_balance() {
   let mut account = create_default_account();  // Test helper method.
-  assert!(!account.has_positive_balance());
   make_transfers(&mut account);                // Test helper method.
   assert!(account.has_positive_balance());
 }
@@ -45,9 +44,9 @@ inspect them for correctness, even at the expense of greater code duplication.
 
 #code[```rust
 #[test]
-fn verify_all_users_exist() {
-  let mut new_account = Account::new(AccountType::Checking);
-  let mut account_with_balance = Account::new(AccountType::Checking);
+fn verify_positive_balance() {
+  let mut new_account = Account::new(AccountType::SUPPORTS_TRANSFERS);
+  let mut account_with_balance = Account::new(AccountType::SUPPORTS_TRANSFERS);
   account_with_balance.deposit(50);
   
   assert!(!new_account.has_positive_balance());
