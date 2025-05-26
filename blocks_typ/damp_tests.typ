@@ -40,7 +40,7 @@ inspect them for correctness, even at the expense of greater code duplication.
 
 #how
 \ Make your tests *DAMP*! (Descriptive and Meaningful Phrases).
-\ In the context of unit tetsts, this test would be easier to read and verify for correctness:
+\ In the context of unit tests, this test would be easier to read and verify for correctness:
 
 #code[```rust
 #[test]
