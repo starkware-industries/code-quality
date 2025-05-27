@@ -14,6 +14,7 @@
 
 // Add name + block number here
 #block_header(4, [Don't make your tests too DRY])
+\ by guy.f@
 
 // Fill text in the 'what' section
 #what
