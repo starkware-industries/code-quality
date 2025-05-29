@@ -23,6 +23,24 @@
     )[#x]
 }
 
+#let bad_code(x) = {
+    box(
+        inset: 6pt,
+        stroke: white,
+        fill: rgb(255, 230, 230),  // light red
+        width: 100%
+    )[#x]
+}
+
+#let good_code(x) = {
+    box(
+        inset: 6pt,
+        stroke: white,
+        fill: rgb(230, 255, 230),  // light green
+        width: 100%
+    )[#x]
+}
+
 #let tip(x) = {
     box(
         inset: 12pt,
