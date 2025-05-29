@@ -23,7 +23,7 @@ than duplication, e.g., by extracting helper methods or by using loops. But is i
 thing for tests?
 \ Is it clear what this test does just from reading its code?
 
-#code[```rust
+#bad_code[```rust
 #[test]
 fn verify_positive_balance_on_transfer() {
   let mut account = create_default_account();  // Test helper method.
@@ -43,15 +43,16 @@ inspect them for correctness, even at the expense of greater code duplication.
 \ Make your tests *DAMP*! (Descriptive and Meaningful Phrases).
 \ In the context of unit tests, this test would be easier to read and verify for correctness:
 
-#code[```rust
+#good_code[```rust
 #[test]
 fn verify_positive_balance_on_transfer() {
-  let mut new_account = Account::new(AccountType::NO_OUTGOING_TRANSFERS);
-  let mut account_with_balance = Account::new(AccountType::SUPPORTS_TRANSFERS);
-  account_with_balance.deposit(50);
-  
+  const BALANCE : u32 = 50;
+  let mut new_account = Account::new(AccountType::NO_OUTGOING_TRANSFERS(0));
+  let mut account_with_balance =
+      Account::new(AccountType::SUPPORTS_TRANSFERS(BALANCE));
+
   assert!(!new_account.has_positive_balance());
-  account_with_balance.transfer_to(&mut new_account, 50);
+  account_with_balance.transfer_to(&mut new_account, BALANCE);
   assert!(new_account.has_positive_balance());
 }
 
