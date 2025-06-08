@@ -13,7 +13,7 @@
 #logo
 
 // Add name + block number here
-#block_header(2, [Depecency Injection])
+#block_header(2, [Dependency Injection])
 
 // Fill text in the 'what' section
 #what
@@ -26,53 +26,32 @@
 
 // Fill text in the 'how' section
 #how
-#set text(size: 7pt)
+#set text(size: 12pt)
 \ #code[```rust
-// Without DI
 struct WalletService {
-  provider: BlockchainProvider,
+  provider: BlockchainProvider, // Without DI
 }
-
 impl WalletService {
   fn new() -> Self {
     WalletService { 
-      // hard-coded dependency
-      provider: BlockchainProvider::connect() 
+      provider: BlockchainProvider::connect() // Hard-Coded dependency
     } 
   }
 }
 ```]
+Testing `WalletService` is difficult - you would need a real blockchain in your test....
 
 \ #code[```rust
-// With DI
 struct WalletServiceDI<'a> {
-  provider: &'a dyn BlockchainProviderTrait,
+  provider: &'a dyn BlockchainProviderTrait, // With DI
 }
-
 impl<'a> WalletServiceDI<'a> {
   fn new(provider: &'a dyn BlockchainProviderTrait) -> Self {
-    // The provider is passed in
-    WalletServiceDI { provider }
+    WalletServiceDI { provider } // The provider is passed in
   }
 }
 ```]
-
-\ #code[```rust
-// DI usage
-
-// In production
-struct RealProvider;
-impl BlockchainProviderTrait for RealProvider {
-  fn query_balance(&self, address: &str) -> u64 {
-    // Real chain logic here
-  }
-}
-
-// In tests
-struct MockProvider;
-impl BlockchainProviderTrait for MockProvider {
-  fn query_balance(&self, _address: &str) -> u64 {
-    // return mock balance
-  }
-}
-```]
+Now you can simply use a mock blockchain and only test the behavior of `WalletService`.
+\ #tip[
+  It can also be optional - give the user the ability to provide the dependencies, but allow them to pass `None` to get the default dependency.
+]

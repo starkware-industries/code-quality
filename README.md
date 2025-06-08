@@ -24,7 +24,7 @@ docker build -t typst .
 Once your `.typ` file is ready, compile it using the provided script:
 
 ```bash
-./scripts/typst.sh <path_to_file>
+./scripts/typst.sh <relative_path_to_file>
 ```
 
 ## 📄 Step 4: Preview Your Block
