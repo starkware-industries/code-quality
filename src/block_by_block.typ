@@ -1,10 +1,14 @@
-#let logo = {
-    align(right)[
-        #image("images/block_by_block.svg", width:180pt)
-    ]
-
-    v(-15pt)
-}
+#let logo(name) = {
+    let qr-path = "images/qr/" + name + ".svg"
+    table(
+        columns: (300pt, auto),
+        align: (right,left),
+        stroke: none,
+        image(qr-path, width:80pt),
+        image("images/src/block_by_block.svg", width:180pt),
+    )
+    v(-20pt)
+ }
 
 #let block_header(nonce, txt) = {
     text(font: "Comic Neue")[
@@ -85,8 +89,8 @@
 )
 }
 
-#let what = {bordered_box("images/what.png")}
-#let why = {bordered_box("images/why.png")}
-#let how = {bordered_box("images/how.png")}
+#let what = {bordered_box("images/src/what.png")}
+#let why = {bordered_box("images/src/why.png")}
+#let how = {bordered_box("images/src/how.png")}
 
 

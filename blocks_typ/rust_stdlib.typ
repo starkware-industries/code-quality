@@ -10,7 +10,7 @@
 )
 #set text(size: 14pt)
 
-#logo
+#logo("rust_stdlib")
 
 // Add name + block number here
 #block_header(4, [Use the standard library])
@@ -50,7 +50,6 @@ for (index, item) in shopping_list.iter().enumerate() {
     println!("{}. {}", index + 1, item);
 }
 ```]
-\
 \ There are many others:
 - `vec!["A", "B", "C"].join(", ")` #h(0.5em) #sym.arrow #h(0.5em) `"A, B, C"`
 - `vec![1, 2, 3, 4].iter().chunks(2)` #h(0.5em) #sym.arrow #h(0.5em) `[[1, 2], [3, 4]]`
