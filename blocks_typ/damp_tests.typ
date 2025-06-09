@@ -10,7 +10,7 @@
 )
 #set text(size: 12pt)
 
-#logo
+#logo("damp_tests")
 
 // Add name + block number here
 #block_header(4, [Don't make your tests too DRY])
