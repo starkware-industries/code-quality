@@ -10,7 +10,8 @@
 )
 #set text(size: 14pt)
 
-#logo
+// Add the name of the file.
+#logo("git_like_a_surgeon")
 
 // Add name + block number here
 #block_header(0, [Git Like a Surgeon])

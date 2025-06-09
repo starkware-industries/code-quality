@@ -10,7 +10,7 @@
 )
 #set text(size: 14pt)
 
-#logo
+#logo("git_like_a_surgeon")
 
 #block_header(0, [Git Like a Surgeon])
 

@@ -5,6 +5,8 @@ RUN apt-get install -y curl xz-utils tar fontconfig fonts-noto-color-emoji
 
 RUN apt-get install fonts-comic-neue fonts-linuxlibertine
 
+RUN apt-get install -y qrencode
+
 # Install typst
 RUN curl -L https://github.com/typst/typst/releases/download/v0.13.1/typst-x86_64-unknown-linux-musl.tar.xz \
     | tar -xJ && \

@@ -10,7 +10,7 @@
 )
 #set text(size: 14pt)
 
-#logo
+#logo("dont_just_be_right_be_clear")
 
 // Add name + block number here
 #block_header(3, [Don't Just Be Right - Be Clear])
