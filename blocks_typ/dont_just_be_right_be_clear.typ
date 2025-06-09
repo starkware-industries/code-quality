@@ -10,7 +10,7 @@
 )
 #set text(size: 14pt)
 
-#logo
+#logo("dont_just_be_right_be_clear")
 
 // Add name + block number here
 #block_header(3, [Don't Just Be Right - Be Clear!])
@@ -38,7 +38,8 @@
 \ It reads: "We're before the expiration time".
 
 \ #code[```py
-❌ assert has_write_permissions or is_read_operation, "No write permissions."
+❌ assert has_write_permissions or is_read_operation, 
+   "No write permissions."
 ```]
 \ It reads: "Does the user have write permissions or they are performing a read operation?"
 #code[```py
