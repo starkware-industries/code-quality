@@ -26,6 +26,21 @@
 // Fill text in the 'how' section
 #how
 #code[```rust
+let mut index = 1;
+for item in shopping_list.iter() {
+    println!("{}. {}", index, item);
+    index += 1;
+}
+```]
+becomes
+#code[```rust
+for (index, item) in shopping_list.iter().enumerate() {
+    println!("{}. {}", index + 1, item);
+}
+```]
+\
+\
+#code[```rust
 if !words_per_length.contains_key(&len) {
     words_per_length.insert(len, 0);
 }
@@ -36,25 +51,10 @@ becomes
 *words_per_length.entry(len).or_insert(0) += 1;
 ```]
 \
-\
-#code[```rust
-let mut index = 1;
-for item in shopping_list.iter() {
-    println!("{}. {}", index, item);
-    index += 1
-}
-```]
-becomes
-#code[```rust
-for (index, item) in shopping_list.iter().enumerate() {
-    println!("{}. {}", index + 1, item);
-}
-```]
-\
 \ There are many others:
 - `vec!["A", "B", "C"].join(", ")` #h(0.5em) #sym.arrow #h(0.5em) `"A, B, C"`
-- `vec![1, 2, 3, 4].iter().chunks(2)` #h(0.5em) #sym.arrow #h(0.5em) `[[1, 2], [3, 4]]`
-- `number.next_multiple_of(x)`
+- `vec![1, 2, 3, 4, 5].chunks(2)` #h(0.5em) #sym.arrow #h(0.5em) `[[1, 2], [3, 4], [5]]`
+- `487.next_multiple_of(100)` #h(0.5em) #sym.arrow #h(0.5em) `500`
 
 // If you need a tip section, fill here
 #tip[
