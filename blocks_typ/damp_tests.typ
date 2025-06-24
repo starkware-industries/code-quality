@@ -12,7 +12,6 @@
 
 #logo
 
-// Add name + block number here
 #block_header(4, [Don't make your tests too DRY])
 \ by guy.f@
 
