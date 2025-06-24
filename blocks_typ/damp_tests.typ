@@ -8,7 +8,7 @@
     right: 50pt,
   )
 )
-#set text(size: 12pt)
+#set text(size: 11pt)
 
 #logo("damp_tests")
 
