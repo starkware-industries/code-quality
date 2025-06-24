@@ -12,7 +12,7 @@
 
 #logo("damp_tests")
 
-#block_header(4, [Don't make your tests too DRY])
+#block_header(5, [Don't make your tests too DRY])
 \ by guy.f@
 
 
@@ -20,7 +20,7 @@
 \  The DRY principle (“Don’t Repeat Yourself”) encourages code reuse rather
 than duplication. But is it also the best thing for tests?
 
-Is it clear what this test does just from reading its code?
+Read the test below and try to understand what it's doing and why it should pass:
 
 #bad_code[```rust
 #[test]
@@ -40,7 +40,7 @@ inspect them for correctness, even at the expense of some code duplication.
 
 #how
 \ Make your tests *DAMP*! (Descriptive and Meaningful Phrases).
-\ In the context of unit tests, this test would be easier to read and verify for correctness:
+\ Read the new test below and try to understand what it's doing and why it should pass:
 
 #good_code[```rust
 #[test]
