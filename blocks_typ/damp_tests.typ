@@ -36,11 +36,7 @@ fn verify_balance_on_transfer() {
 #why
 \ While the test body above is concise, the reader cannot understand what it does without looking
 at other places. Since tests don't have tests, it should be easy for humans to manually
-<<<<<<< HEAD
-inspect them for correctness, even at the expense of greater code duplication.
-=======
 inspect them for correctness, even at the expense of some code duplication.
->>>>>>> 8dccf04 (Shorten the text at the tip)
 
 #how
 \ Make your tests *DAMP*! (Descriptive and Meaningful Phrases).
