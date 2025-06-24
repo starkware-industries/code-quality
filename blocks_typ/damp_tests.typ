@@ -59,8 +59,7 @@ fn verify_positive_balance_on_transfer() {
 ```]
 
 #tip[
-  The DRY principle is still relevant in tests; for example, using a helper function for creating
-  value objects can increase clarity by removing redundant details from the test body. Ideally,
+  The DRY principle is still relevant in tests. Ideally,
   test code should be both readable and unique, but sometimes there’s a trade-off. When writing unit
   tests and faced with a choice between the DRY and DAMP principles, lean more heavily toward DAMP.
 ]
