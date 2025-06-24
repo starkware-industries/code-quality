@@ -16,19 +16,19 @@
 #block_header(4, [Don't make your tests too DRY])
 \ by guy.f@
 
-// Fill text in the 'what' section
+
 #what
-\  The DRY principle (“Don’t Repeat Yourself”), is a best practice that encourages code reuse rather
-than duplication, e.g., by extracting helper methods or by using loops. But is it also the best
-thing for tests?
-\ Is it clear what this test does just from reading its code?
+\  The DRY principle (“Don’t Repeat Yourself”) encourages code reuse rather
+than duplication. But is it also the best thing for tests?
+
+Is it clear what this test does just from reading its code?
 
 #bad_code[```rust
 #[test]
-fn verify_positive_balance_on_transfer() {
+fn verify_balance_on_transfer() {
   let mut account = create_default_account();  // Test helper method.
   make_transfers(&mut account);                // Test helper method.
-  assert!(account.has_positive_balance());
+  assert_eq!(1500, account.balance());
 }
 
 ```]
@@ -45,15 +45,18 @@ inspect them for correctness, even at the expense of greater code duplication.
 
 #good_code[```rust
 #[test]
-fn verify_positive_balance_on_transfer() {
-  const BALANCE : u32 = 50;
-  let mut new_account = Account::new(AccountType::NO_OUTGOING_TRANSFERS(0));
-  let mut account_with_balance =
-      Account::new(AccountType::SUPPORTS_TRANSFERS(BALANCE));
+fn verify_balance_on_transfer() {
+  const INITIAL_BALANCE : u32 = 1000;
+  const TRANSFER_AMOUNT : u32 = 500;
+  
+  let mut new_account =
+      Account::new(AccountType::NO_OUTGOING_TRANSFERS(INITIAL_BALANCE));
+  let mut account_to_transfer_from =
+      Account::new(AccountType::SUPPORTS_TRANSFERS(TRANSFER_AMOUNT));
 
-  assert!(!new_account.has_positive_balance());
-  account_with_balance.transfer_to(&mut new_account, BALANCE);
-  assert!(new_account.has_positive_balance());
+  assert_eq!(INITIAL_BALANCE, new_account.balance());
+  account_to_transfer_from.transfer_to(&mut new_account, TRANSFER_AMOUNT);
+  assert_eq!(INITIAL_BALANCE + TRANSFER_AMOUNT, new_account.balance());
 }
 
 ```]
