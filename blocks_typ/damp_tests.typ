@@ -25,9 +25,9 @@ Read the test below and try to understand what it's doing and why it should pass
 #bad_code[```rust
 #[test]
 fn verify_balance_on_transfer() {
-  let mut account = create_default_account();  // Test helper method.
-  make_transfers(&mut account);                // Test helper method.
-  assert_eq!(account.balance(), 1500);
+  let mut (account1, account2) = create_default_accounts();  // Test helper method.
+  make_transfer(&mut account1, &mut acccount2);              // Test helper method.
+  assert_eq!(account2.balance(), 1500);
 }
 
 ```]
@@ -64,6 +64,6 @@ fn verify_balance_on_transfer() {
   The DRY principle is still relevant in tests. 
   There is a trade-off between readable and unique.
   Try to avoid duplicate code (DRY) while keeping the code expressive and easy to verify (DAMP).
-  If unsure, lean more heavily on the side of DAMP.
+  DRY and DAMP sometimes conflict. In tests, usually lean towards using DAMP.
 ]
 
