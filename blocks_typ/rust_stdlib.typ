@@ -49,6 +49,20 @@ becomes
 *words_per_length.entry(len).or_insert(0) += 1;
 ```]
 \
+\
+#code[```rust
+let mut index = 1;
+for item in shopping_list.iter() {
+    println!("{}. {}", index, item);
+    index += 1
+}
+```]
+becomes
+#code[```rust
+for (index, item) in shopping_list.iter().enumerate() {
+    println!("{}. {}", index + 1, item);
+}
+```]
 \ There are many others:
 - `vec!["A", "B", "C"].join(", ")` #h(1em) #text(luma(35%))[( = #h(0.2em) `"A, B, C"` )]
 - `vec![1, 2, 3, 4, 5].chunks(2)` #h(1.5em) #text(luma(35%))[( = #h(0.2em) `[[1, 2], [3, 4], [5]]` )]
