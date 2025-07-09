@@ -7,7 +7,7 @@ output_dir="blocks_pdf"
 
 output_file="${output_dir}/${filename}.pdf"
 
-# Remove old PDF if it exists
-rm -f "$output_file"
+# Generate file qr code
+docker run --rm -v $(pwd):/work -w /work --entrypoint bash typst ./scripts/generate_qr.sh "$filename"
 
 docker run --rm -v $(pwd):/work -w /work typst compile --root /work "$input_file" "$output_file"
