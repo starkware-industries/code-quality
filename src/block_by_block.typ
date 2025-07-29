@@ -74,7 +74,7 @@
             fill: black,
             font: "Comic Neue",
         )[*Call For Action!*📢💨 #x]
-    ]      
+    ]
 }
 
 #let bordered_box(path)= {
@@ -93,4 +93,19 @@
 #let why = {bordered_box("images/src/why.png")}
 #let how = {bordered_box("images/src/how.png")}
 
+#let page_border(color) = box(
+  stroke: (paint: color, thickness: 4pt, cap: "round") ,
+  width: 550pt,
+  height: 800pt,
+)[
+  ~
+]
 
+#let slack = table(
+        columns: (440pt, 150pt),
+        align: (right, left),
+        column-gutter: -8pt,
+        stroke: none,
+        image("images/src/slack.png", width:15pt),
+        text(font: "Comic Neue", size: 15pt, baseline: 3pt)[#"#starkcode"]
+    )

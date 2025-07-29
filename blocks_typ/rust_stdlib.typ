@@ -3,10 +3,11 @@
 #set page(
   margin: (
     top: 30pt,
-    bottom: 30pt,
+    bottom: 0pt,
     left: 50pt,
     right: 50pt,
-  )
+  ),
+  background: [#page_border(blue)],
 )
 #set text(size: 13.9pt)
 
@@ -56,3 +57,5 @@ becomes
 #tip[
   Most of the examples here have Python equivalents
 ]
+#v(-32pt)
+#slack

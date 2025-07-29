@@ -3,10 +3,12 @@
 #set page(
   margin: (
     top: 30pt,
-    bottom: 30pt,
+    bottom: 0pt,
     left: 50pt,
     right: 50pt,
-  )
+  ),
+  // Choose your block color here
+  background: [#page_border(blue)],
 )
 #set text(size: 14pt)
 
@@ -29,8 +31,18 @@
 \ Example
 
 
-// If you need a code section, fill here with the correct language
+// If you need a code section, fill here with the correct language.
 #code[```bash
+Example
+```]
+
+// If you need a bad code section, fill here with the correct language.
+#bad_code[```bash
+Example
+```]
+
+// If you need a good code section, fill here with the correct language.
+#good_code[```bash
 Example
 ```]
 
@@ -43,3 +55,7 @@ Example
 #call_for_action[
   Example
 ]
+
+// Add slack logo on the bottom right corner, play with the negative number to find the right location.
+#v(-20pt)
+#slack
