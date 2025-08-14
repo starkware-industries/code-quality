@@ -72,6 +72,7 @@
     )[
         #text(
             fill: black,
+            size: 12pt,
             font: "Comic Neue",
         )[*Call For Action!*📢💨 #x]
     ]
