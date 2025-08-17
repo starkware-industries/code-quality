@@ -3,10 +3,11 @@
 #set page(
   margin: (
     top: 30pt,
-    bottom: 30pt,
+    bottom: 0pt,
     left: 50pt,
     right: 50pt,
-  )
+  ),
+  background: [#page_border(green)],
 )
 #set text(size: 11pt)
 
@@ -61,9 +62,14 @@ fn verify_balance_on_transfer() {
 ```]
 
 #tip[
-  The DRY principle is still relevant in tests. 
+  The DRY principle is still relevant in tests.
   There is a trade-off between readable and unique.
   Try to avoid duplicate code (DRY) while keeping the code expressive and easy to verify (DAMP).
   DRY and DAMP sometimes conflict. In tests, usually lean towards using DAMP.
 ]
 
+#call_for_action()[
+ Choose one DRY test from your repo and make it DAMP.
+]
+#v(-25pt)
+#slack
