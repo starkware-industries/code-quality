@@ -10,7 +10,8 @@
   // Choose your block color here
   background: [#page_border(blue)],
 )
-#set text(size: 14pt)
+// Do not change the font size.
+#set text(size: 13pt)
 
 // Add the name of the file.
 #logo("git_like_a_surgeon")
