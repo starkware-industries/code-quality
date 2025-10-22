@@ -13,7 +13,7 @@
 // Do not change the font size.
 #set text(size: 13pt)
 #logo("enums")
-#block_header(7, [Rust enums are great!])\
+#block_header(8, [Rust enums are great!])\
 #what
 \ Rust enums let you name and limit the valid states a variable can take.
 \ #why
