@@ -8,7 +8,7 @@
     right: 50pt,
   ),
   // Choose your block color here
-  background: [#page_border(blue)],
+  background: [#page_border(yellow)],
 )
 // Do not change the font size.
 #set text(size: 13pt)
