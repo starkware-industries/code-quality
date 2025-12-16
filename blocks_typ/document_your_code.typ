@@ -38,7 +38,7 @@ fn calculate_price(user: User, order: Order) -> u64 {
         initial_price - calculate_discount(&user, initial_price);
 
     // Add VAT according to the user's profile.
-    price_after_discount + calculate_vat(&user, price_after_discount);
+    price_after_discount + calculate_vat(&user, price_after_discount)
 }
 ```]
 \
